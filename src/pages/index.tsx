@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Header } from '../components/Header'
 import { SubscribeButton } from '../components/SubscribeButton'
 
 import styles from './home.module.scss'
@@ -9,6 +10,8 @@ export default function Home() {
       <Head>
           <title>Início | TOS</title>
       </Head>
+
+      <Header />
 
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
