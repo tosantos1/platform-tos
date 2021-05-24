@@ -1,13 +1,14 @@
-import { Input, Link, Flex, Button, FormLabel, FormControl, HStack, FormHelperText, useToast} from "@chakra-ui/react";
+import { Input, Link, Flex, Button, FormLabel, FormControl, Box, HStack, FormHelperText} from "@chakra-ui/react";
+
+import { FaFacebook, FaGoogle } from 'react-icons/fa';
 
 import { Header } from "../../components/Header";
-import Facebook from "./Facebook";
+import Facebook from "./facebook";
 import Google from "./Google";
 
-export default function Login(){
-    const toast = useToast()
+export default function SignIn() {
     return(
-        <>
+<>
             <Header />
             <Flex
             pt={20}
@@ -23,12 +24,15 @@ export default function Login(){
                 borderRadius={8}
                 flexDir="column"
             >
-            <FormControl>
+                
+            <FormControl isRequired>
+                <FormLabel >Nome</FormLabel>
+                <Input mb={2}/>
                 <FormLabel >Email</FormLabel>
                 <Input type="email" />
                 <FormLabel mt={2}>Senha</FormLabel>
                 <Input type="password" />
-                <FormHelperText><Link>Esqueceu a senha?</Link></FormHelperText>
+                
             </FormControl>
 
             <Button
@@ -47,5 +51,5 @@ export default function Login(){
     </Flex>
         
         </>
-    )
+    );
 }

@@ -1,12 +1,13 @@
-import { Button } from '@chakra-ui/react';
+import { Button, Link } from '@chakra-ui/react';
 
 import { ChevronRightIcon, CloseIcon } from '@chakra-ui/icons'
 
 
 
 
+
 export function SignInButton() {
-	const isUserLoggedIn = true;
+	const isUserLoggedIn = false;
 
 	return isUserLoggedIn ? (
 		<Button
@@ -16,8 +17,7 @@ export function SignInButton() {
 			variant="outline"
 			color="green.100"
 			_hover={{color: "green.100"}}
-			textDecoration="none" 
-			href="/login"
+			
 			p="4"
 			border="2px"
 			borderColor="#04d361"
@@ -29,7 +29,11 @@ export function SignInButton() {
 				ml={2}
 				/>}
 		>
-			Tiago Oliveira
+			<Link 	
+				_hover={{color:'green.200'}}
+				
+				
+			> Tiago Oliveira </Link>
 		</Button>
 	): (
 			<Button
