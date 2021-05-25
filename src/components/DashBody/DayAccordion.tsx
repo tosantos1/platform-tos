@@ -12,7 +12,7 @@ export function DayAccordion() {
       allowMultiple
     >
       <AccordionMonday title="Segunda Feira" />
-      <AccordionMonday title="Segunda Feira" />
+      <AccordionMonday title="Terça Feira" />
           
     </Accordion>
   );

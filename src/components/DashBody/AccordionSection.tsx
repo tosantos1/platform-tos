@@ -27,26 +27,19 @@ interface AccordionSectionProps {
 
 export function AccordionMonday({ title }: AccordionSectionProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [video, setVideo] = React.useState("https://www.youtube.com/embed/fR0tb6agqqA");
-
-  const handleVideoClick = (newVideo) => {
-    setVideo(newVideo);
-    onOpen();
-  };
-
-  const videos = ["https://www.youtube.com/embed/fR0tb6agqqA"];
+  
 
   return (
-    <AccordionItem>
+    <AccordionItem mb={4} border={0}  >
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
+        <AccordionButton borderRadius={2} bg="gray.800">
+          <Box flex="1" textAlign="left" >
             <Checkbox colorScheme="green">{title}</Checkbox>
           </Box>
           <AccordionIcon />
         </AccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <AccordionPanel bg="gray.800" pb={4}>
         <SimpleGrid columns={3} spacing={10}>
           <Box bg="gray.800" height="100%" borderRadius={8} p={6}>
             <Heading as="h1" size="lg" textAlign="center" mb={4} isTruncated>
@@ -58,14 +51,10 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
             <Text as="p" fontWeight="light" color="gray.400">
               3X 8 A 12 (CADA LADO)
             </Text>
-            {videos.map((video) => (
-              <Button
-                colorScheme="red"
-                mt={2}
-                onClick={() => handleVideoClick(video)}
-                key={video}
-              >Vídeo</Button>
-            ))}
+
+            <Button id="opa" colorScheme="red" mt={2} onClick={onOpen}>
+              Vídeo
+            </Button>
 
             <Modal isOpen={isOpen} onClose={onClose} size="xl">
               <ModalOverlay />
@@ -76,7 +65,7 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
                   <AspectRatio maxW="560px" ratio={1}>
                     <iframe
                       title="naruto"
-                      src={`${videos}`}
+                      src="https://www.youtube.com/embed/QhBnZ6NPOY0"
                       allowFullScreen
                     />
                   </AspectRatio>
@@ -110,33 +99,7 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
               Vídeo
             </Button>
 
-            <Modal isOpen={isOpen} onClose={onClose} size="xl">
-              <ModalOverlay />
-              <ModalContent bg="gray.800">
-                <ModalHeader>Tutorial Exercício</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <AspectRatio maxW="560px" ratio={1}>
-                    <iframe
-                      title="naruto"
-                      src=""
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </ModalBody>
-
-                <ModalFooter>
-                  <Button
-                    bg="#7058f9"
-                    _hover={{ opacity: 0.9 }}
-                    mr={3}
-                    onClick={onClose}
-                  >
-                    Fechar
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
+           
           </Box>
 
           <Box bg="gray.800" height="100%" borderRadius={8} p={6}>
@@ -153,33 +116,7 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
               Vídeo
             </Button>
 
-            <Modal isOpen={isOpen} onClose={onClose} size="xl">
-              <ModalOverlay />
-              <ModalContent bg="gray.800">
-                <ModalHeader>Tutorial Exercício</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <AspectRatio maxW="560px" ratio={1}>
-                    <iframe
-                      title="naruto"
-                      src=""
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                </ModalBody>
-
-                <ModalFooter>
-                  <Button
-                    bg="#7058f9"
-                    _hover={{ opacity: 0.9 }}
-                    mr={3}
-                    onClick={onClose}
-                  >
-                    Fechar
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
+           
           </Box>
         </SimpleGrid>
       </AccordionPanel>
