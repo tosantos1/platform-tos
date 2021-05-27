@@ -27,13 +27,18 @@ interface AccordionSectionProps {
 
 export function AccordionMonday({ title }: AccordionSectionProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
+  const [repositories, setRepositories] = useState([{ id: 1, name: "repo-1" }]);
 
   return (
-    <AccordionItem mb={4} border={0}  >
+    <AccordionItem mb={4} border={0}>
       <h2>
-        <AccordionButton borderRadius={2} bg="gray.800">
-          <Box flex="1" textAlign="left" >
+        <AccordionButton
+          borderTopRadius="xl"
+          bg="gray.800"
+          _hover={{ opacity: 0.9 }}
+        >
+          <Box flex="1" textAlign="left">
             <Checkbox colorScheme="green">{title}</Checkbox>
           </Box>
           <AccordionIcon />
@@ -41,7 +46,7 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
       </h2>
       <AccordionPanel bg="gray.800" pb={4}>
         <SimpleGrid columns={3} spacing={10}>
-          <Box bg="gray.800" height="100%" borderRadius={8} p={6}>
+          <Box bg="gray.800" height="100%" p={6}>
             <Heading as="h1" size="lg" textAlign="center" mb={4} isTruncated>
               Exercício 1
             </Heading>
@@ -52,7 +57,7 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
               3X 8 A 12 (CADA LADO)
             </Text>
 
-            <Button id="opa" colorScheme="red" mt={2} onClick={onOpen}>
+            <Button colorScheme="red" mt={2} onClick={onOpen}>
               Vídeo
             </Button>
 
@@ -64,8 +69,9 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
                 <ModalBody>
                   <AspectRatio maxW="560px" ratio={1}>
                     <iframe
+                      id="abrirmodal"
                       title="naruto"
-                      src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+                      src="https://www.youtube.com/embed/NEc1AaJSPJk"
                       allowFullScreen
                     />
                   </AspectRatio>
@@ -98,8 +104,6 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
             <Button colorScheme="red" mt={2} onClick={onOpen}>
               Vídeo
             </Button>
-
-           
           </Box>
 
           <Box bg="gray.800" height="100%" borderRadius={8} p={6}>
@@ -115,8 +119,6 @@ export function AccordionMonday({ title }: AccordionSectionProps) {
             <Button colorScheme="red" onClick={onOpen} mt={2}>
               Vídeo
             </Button>
-
-           
           </Box>
         </SimpleGrid>
       </AccordionPanel>

@@ -11,7 +11,7 @@ export function DayAccordion() {
       defaultIndex={[0]}
       allowMultiple
     >
-      <AccordionMonday title="Segunda Feira" />
+      <Accordion Monday title="Segunda Feira" />
       <AccordionMonday title="Terça Feira" />
           
     </Accordion>
